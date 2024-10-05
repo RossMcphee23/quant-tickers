@@ -18,5 +18,6 @@ def get_competitors(ticker):
             competitor_ticker = link.text.strip()
             if competitor_ticker and competitor_ticker.isupper():
                 competitors.append(competitor_ticker)
-
+    except IndexError:
+        print(f"Couldn't find competitors for {ticker}")
     #Need to consider no competitors?
